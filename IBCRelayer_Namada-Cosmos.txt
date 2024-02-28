@@ -66,8 +66,12 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 
-Cosmos testnet address : cosmos18rlx6ncw35r89sqvyfv72pmru82myhkn2s9lpx
+Cosmos testnet relayer address  : cosmos18rlx6ncw35r89sqvyfv72pmru82myhkn2s9lpx
 Namdada testnet relayer address : tnam1qq0wg7phqdf9svsy7pjcsv633vc9mmu46uuy9dkq
+Test Channel Txid : 
+https://testnet.mintscan.io/cosmoshub-testnet/txs/9361110553C0411EEF8B41D386847D5116FCF71D8F61E3A28BB1D2FEC302BEDF?height=20498361
+
+
 
 
 My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
