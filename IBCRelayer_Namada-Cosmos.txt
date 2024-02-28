@@ -1,0 +1,77 @@
+root@localhost:~/hermes# hermes --config config.toml   create channel   --a-chain shielded-expedition.88f17d1d14   --b-chain theta-testnet-001  --a-port transfer   --b-port transfer   --new-client-connection --yes
+2024-02-28T04:00:42.262950Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c62
+2024-02-28T04:02:55.045309Z  INFO ThreadId(01) Creating new clients, new connection, and a new channel with order ORDER_UNORDERED
+2024-02-28T04:03:23.344469Z  INFO ThreadId(01) foreign_client.create{client=theta-testnet-001->shielded-expedition.88f17d1d14:07-tendermint-0}: 🍭 client was created successfully id=07-tendermint-1895
+2024-02-28T04:07:56.744100Z  INFO ThreadId(01) foreign_client.create{client=shielded-expedition.88f17d1d14->theta-testnet-001:07-tendermint-0}: 🍭 client was created successfully id=07-tendermint-3253
+2024-02-28T04:08:21.308295Z  INFO ThreadId(01) 🥂 shielded-expedition.88f17d1d14 => OpenInitConnection(OpenInit { Attributes { connection_id: connection-833, client_id: 07-tendermint-1895, counterparty_connection_id: None, counterparty_client_id: 07-tendermint-3253 } }) at height 0-84674
+2024-02-28T04:13:47.957690Z  INFO ThreadId(01) 🥂 theta-testnet-001 => OpenTryConnection(OpenTry { Attributes { connection_id: connection-3415, client_id: 07-tendermint-3253, counterparty_connection_id: connection-833, counterparty_client_id: 07-tendermint-1895 } }) at height 0-20496618
+2024-02-28T04:27:49.538495Z  INFO ThreadId(01) 🥂 shielded-expedition.88f17d1d14 => OpenAckConnection(OpenAck { Attributes { connection_id: connection-833, client_id: 07-tendermint-1895, counterparty_connection_id: connection-3415, counterparty_client_id: 07-tendermint-3253 } }) at height 0-84783
+2024-02-28T04:34:55.892965Z  INFO ThreadId(01) 🥂 theta-testnet-001 => OpenConfirmConnection(OpenConfirm { Attributes { connection_id: connection-3415, client_id: 07-tendermint-3253, counterparty_connection_id: connection-833, counterparty_client_id: 07-tendermint-1895 } }) at height 0-20496848
+2024-02-28T04:37:09.364918Z  INFO ThreadId(01) connection handshake already finished for Connection { delay_period: 0ns, a_side: ConnectionSide { chain: BaseChainHandle { chain_id: shielded-expedition.88f17d1d14 }, client_id: 07-tendermint-1895, connection_id: connection-833 }, b_side: ConnectionSide { chain: BaseChainHandle { chain_id: theta-testnet-001 }, client_id: 07-tendermint-3253, connection_id: connection-3415 } }
+2024-02-28T04:37:27.631307Z  INFO ThreadId(01) 🎊  shielded-expedition.88f17d1d14 => OpenInitChannel(OpenInit { port_id: transfer, channel_id: channel-552, connection_id: None, counterparty_port_id: transfer, counterparty_channel_id: None }) at height 0-84837
+2024-02-28T04:44:34.148951Z  INFO ThreadId(01) 🎊  theta-testnet-001 => OpenTryChannel(OpenTry { port_id: transfer, channel_id: channel-3916, connection_id: connection-3415, counterparty_port_id: transfer, counterparty_channel_id: channel-552 }) at height 0-20496953
+2024-02-28T04:45:16.944057Z  INFO ThreadId(01) 🎊  shielded-expedition.88f17d1d14 => OpenAckChannel(OpenAck { port_id: transfer, channel_id: channel-552, connection_id: connection-833, counterparty_port_id: transfer, counterparty_channel_id: channel-3916 }) at height 0-84880
+2024-02-28T04:54:28.926955Z  INFO ThreadId(01) 🎊  theta-testnet-001 => OpenConfirmChannel(OpenConfirm { port_id: transfer, channel_id: channel-3916, connection_id: connection-3415, counterparty_port_id: transfer, counterparty_channel_id: channel-552 }) at height 0-20497061
+2024-02-28T04:56:43.098705Z  INFO ThreadId(01) channel handshake already finished for Channel { ordering: ORDER_UNORDERED, a_side: ChannelSide { chain: BaseChainHandle { chain_id: shielded-expedition.88f17d1d14 }, client_id: 07-tendermint-1895, connection_id: connection-833, port_id: transfer, channel_id: channel-552, version: None }, b_side: ChannelSide { chain: BaseChainHandle { chain_id: theta-testnet-001 }, client_id: 07-tendermint-3253, connection_id: connection-3415, port_id: transfer, channel_id: channel-3916, version: None }, connection_delay: 0ns }
+SUCCESS Channel {
+    ordering: Unordered,
+    a_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "shielded-expedition.88f17d1d14",
+                version: 0,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-1895",
+        ),
+        connection_id: ConnectionId(
+            "connection-833",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-552",
+            ),
+        ),
+        version: None,
+    },
+    b_side: ChannelSide {
+        chain: BaseChainHandle {
+            chain_id: ChainId {
+                id: "theta-testnet-001",
+                version: 0,
+            },
+            runtime_sender: Sender { .. },
+        },
+        client_id: ClientId(
+            "07-tendermint-3253",
+        ),
+        connection_id: ConnectionId(
+            "connection-3415",
+        ),
+        port_id: PortId(
+            "transfer",
+        ),
+        channel_id: Some(
+            ChannelId(
+                "channel-3916",
+            ),
+        ),
+        version: None,
+    },
+    connection_delay: 0ns,
+}
+
+Cosmos testnet address : cosmos18rlx6ncw35r89sqvyfv72pmru82myhkn2s9lpx
+Namdada testnet relayer address : tnam1qq0wg7phqdf9svsy7pjcsv633vc9mmu46uuy9dkq
+
+
+My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
+Moniker : Nancy2393622235
+Link of this Proof :
+Encrypted ownership verification (MD5 Hash) : 
+adamanlab.xyz
