@@ -72,6 +72,6 @@ Namdada testnet relayer address : tnam1qq0wg7phqdf9svsy7pjcsv633vc9mmu46uuy9dkq
 
 My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
 Moniker : Nancy2393622235
-Link of this Proof :
-Encrypted ownership verification (MD5 Hash) : 
+Link of this Proof : https://raw.githubusercontent.com/nolan7512/ProofofNamada/main/IBCRelayer_Namada-Cosmos.txt
+Encrypted ownership verification (MD5 Hash) : 827e765b234f80a8544eb1d755978e1d
 adamanlab.xyz
