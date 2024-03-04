@@ -1,0 +1,56 @@
+- These optimizations have the general purpose of enhancing the ability of validators and nodes to make the most of the network's resources. The above setting will create a list of fast, strong, stable authenticators sorted descending during the connection process to help the node choose the best authenticator to connect.
+
+- Avoid wasting network resources. And it optimizes the current number of validators and nodes present in the network. Efficient resource utilization is paramount for maintaining network stability and performance.
+
+- These enhancements target areas such as connectivity, consensus process efficiency, and recovery from connection issues. Notable adjustments include increased maximum outbound peer connections, reduced dial timeout for quicker connection establishment, and fine-tuned consensus timeouts to expedite decision-making. Additionally, the activation of skip_timeout_commit ensure smooth operation and faster recovery and it works well with the new update of Cometbft in case of commit timeouts. 
+
+
+- I have some improvements
+max_num_outbound_peers: Increased to allow more outbound connections, facilitating better connectivity and data exchange in the network.
+
+dial_timeout: Reduced to 2 seconds to minimize connection attempt time and expedite the establishment of new connections.
+
+Consensus timeouts: Various consensus timeouts have been adjusted to faster values, ensuring quicker decision-making in the consensus process.
+
+skip_timeout_commit: Enabled to quickly switch to another peer in case of a commit timeout, ensuring smoother operation and faster recovery from connection issues.
+
+These improvements aim to enhance the performance and resilience of the node in a network with a large number of validators and nodes.
+
+handshake_timeout : Set handshake_timeout to 15 seconds for robust connection establishment
+
+My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
+
+
+
+
+My Changes :
+
+[ledger.cometbft.p2p]
+laddr = "tcp://0.0.0.0:26656"
+external_address = ""
+seeds = ""
+# Increased max_num_outbound_peers to allow more outbound connections
+max_num_outbound_peers = 100
+# Set handshake_timeout to 15 seconds for robust connection establishment
+handshake_timeout = "15000ms"
+# Set dial_timeout to reduce connection attempt time
+dial_timeout = "2000ms"
+
+[ledger.cometbft.mempool]
+# No specific changes
+
+[ledger.cometbft.consensus]
+# Adjusted various timeouts for faster consensus
+timeout_propose = "2000ms"
+timeout_prevote = "800ms"
+timeout_prevote_delta = "400ms"
+timeout_precommit = "800ms"
+timeout_commit = "5000ms"
+# Enabled skipping commit timeout to quickly switch to another peer in case of timeout
+skip_timeout_commit = true
+
+[ledger.cometbft.instrumentation]
+# No specific changes
+
+[ledger.cometbft.statesync]
+# No specific changes
