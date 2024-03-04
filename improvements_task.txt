@@ -1,3 +1,9 @@
+Increase node scanning speed
+
+Performance and Resilience Enhancements in Network Node Configuration
+and it is optimized with the new update of Cometbft v 0.37.02 version
+https://github.com/cometbft/cometbft/pull/2475
+
 - These optimizations have the general purpose of enhancing the ability of validators and nodes to make the most of the network's resources. The above setting will create a list of fast, strong, stable authenticators sorted descending during the connection process to help the node choose the best authenticator to connect.
 
 - Avoid wasting network resources. And it optimizes the current number of validators and nodes present in the network. Efficient resource utilization is paramount for maintaining network stability and performance.
