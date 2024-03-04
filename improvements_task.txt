@@ -4,6 +4,8 @@ Performance and Resilience Enhancements in Network Node Configuration
 and it is optimized with the new update of Cometbft v 0.37.02 version
 https://github.com/cometbft/cometbft/pull/2475
 
+
+
 - These optimizations have the general purpose of enhancing the ability of validators and nodes to make the most of the network's resources. The above setting will create a list of fast, strong, stable authenticators sorted descending during the connection process to help the node choose the best authenticator to connect.
 
 - Avoid wasting network resources. And it optimizes the current number of validators and nodes present in the network. Efficient resource utilization is paramount for maintaining network stability and performance.
@@ -11,7 +13,11 @@ https://github.com/cometbft/cometbft/pull/2475
 - These enhancements target areas such as connectivity, consensus process efficiency, and recovery from connection issues. Notable adjustments include increased maximum outbound peer connections, reduced dial timeout for quicker connection establishment, and fine-tuned consensus timeouts to expedite decision-making. Additionally, the activation of skip_timeout_commit ensure smooth operation and faster recovery and it works well with the new update of Cometbft in case of commit timeouts. 
 
 
-- I have some improvements
+
+
+- These improvements aim to enhance the performance and resilience of the node in a network with a large number of validators and nodes.
+- I have some improvements. 
+
 max_num_outbound_peers: Increased to allow more outbound connections, facilitating better connectivity and data exchange in the network.
 
 dial_timeout: Reduced to 2 seconds to minimize connection attempt time and expedite the establishment of new connections.
@@ -20,10 +26,12 @@ Consensus timeouts: Various consensus timeouts have been adjusted to faster valu
 
 skip_timeout_commit: Enabled to quickly switch to another peer in case of a commit timeout, ensuring smoother operation and faster recovery from connection issues.
 
-These improvements aim to enhance the performance and resilience of the node in a network with a large number of validators and nodes.
-
 handshake_timeout : Set handshake_timeout to 15 seconds for robust connection establishment
 
+
+
+
+*NOTE : All of the above changes for improvement must go together to resonate with each other. If separated, they may not be effective and may also cause negative consequences.
 My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
 
 
