@@ -1,9 +1,7 @@
 Increase node scanning speed
 
 Performance and Resilience Enhancements in Network Node Configuration
-and it is optimized with the new update of Cometbft v 0.37.02 version
-https://github.com/cometbft/cometbft/pull/2475
-
+and it is optimized with the new update of Cometbft v0.37.2 version
 
 
 - These optimizations have the general purpose of enhancing the ability of validators and nodes to make the most of the network's resources. The above setting will create a list of fast, strong, stable authenticators sorted descending during the connection process to help the node choose the best authenticator to connect.
@@ -12,37 +10,28 @@ https://github.com/cometbft/cometbft/pull/2475
 
 - These enhancements target areas such as connectivity, consensus process efficiency, and recovery from connection issues. Notable adjustments include increased maximum outbound peer connections, reduced dial timeout for quicker connection establishment, and fine-tuned consensus timeouts to expedite decision-making. Additionally, the activation of skip_timeout_commit ensure smooth operation and faster recovery and it works well with the new update of Cometbft in case of commit timeouts. 
 
-
-
-
 - These improvements aim to enhance the performance and resilience of the node in a network with a large number of validators and nodes.
-- I have some improvements. 
 
-max_num_outbound_peers: Increased to allow more outbound connections, facilitating better connectivity and data exchange in the network.
+- I have some improvements:
 
-dial_timeout: Reduced to 2 seconds to minimize connection attempt time and expedite the establishment of new connections.
+  + max_num_outbound_peers: Increased to allow more outbound connections, facilitating better connectivity and data exchange in the network.
 
-Consensus timeouts: Various consensus timeouts have been adjusted to faster values, ensuring quicker decision-making in the consensus process.
+  + dial_timeout: Reduced to 2 seconds to minimize connection attempt time and expedite the establishment of new connections.
 
-skip_timeout_commit: Enabled to quickly switch to another peer in case of a commit timeout, ensuring smoother operation and faster recovery from connection issues.
+  + Consensus timeouts: Various consensus timeouts have been adjusted to faster values, ensuring quicker decision-making in the consensus process.
 
-handshake_timeout : Set handshake_timeout to 15 seconds for robust connection establishment
+  + skip_timeout_commit: Enabled to quickly switch to another peer in case of a commit timeout, ensuring smoother operation and faster recovery from connection issues.
 
-
-
-
-*NOTE : All of the above changes for improvement must go together to resonate with each other. If separated, they may not be effective and may also cause negative consequences.
-My memo : tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
+  + handshake_timeout : Set handshake_timeout to 15 seconds for robust connection establishment
 
 
+*NOTE: All of the above changes for improvement must go together to resonate with each other. If separated, they may not be effective and may also cause negative consequences.
+My memo: tpknam1qr0f3m6cjs5taskgy4q2x0pa2frv0f055p42t3rjdvl79sl0hxplgquqlx9
 
 
-My Changes :
+MY CHANGES:
 
 [ledger.cometbft.p2p]
-laddr = "tcp://0.0.0.0:26656"
-external_address = ""
-seeds = ""
 # Increased max_num_outbound_peers to allow more outbound connections
 max_num_outbound_peers = 100
 # Set handshake_timeout to 15 seconds for robust connection establishment
