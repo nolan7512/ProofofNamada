@@ -68,8 +68,9 @@ SUCCESS Channel {
 
 Cosmos testnet relayer address  : cosmos18rlx6ncw35r89sqvyfv72pmru82myhkn2s9lpx
 Namdada testnet relayer address : tnam1qq0wg7phqdf9svsy7pjcsv633vc9mmu46uuy9dkq
-Test Channel Txid : 
+Test Channel Txid : 9361110553C0411EEF8B41D386847D5116FCF71D8F61E3A28BB1D2FEC302BEDF?height=20498361
 https://testnet.mintscan.io/cosmoshub-testnet/txs/9361110553C0411EEF8B41D386847D5116FCF71D8F61E3A28BB1D2FEC302BEDF?height=20498361
+https://www.mintscan.io/cosmoshub-testnet/tx/9361110553C0411EEF8B41D386847D5116FCF71D8F61E3A28BB1D2FEC302BEDF?height=20498361
 
 
 
