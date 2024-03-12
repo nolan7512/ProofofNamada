@@ -54,3 +54,9 @@ Independent auditing: Conduct independent audits and inspections of the use of p
 By implementing such controls and checks, the Namada project can ensure that the use of public funds is carried out transparently, responsibly, and effectively.
 
 =================================
+
+Update to supplement my views, I have applied the above errors to account for the PGF Treasury fund that I emailed on 2024/03/12 my email : teik7512@gmail.com
+with title : "Finding Security Vulnerabilities - A way to generate free tokens that takes advantage of theoretical flaws"
+
+
+
