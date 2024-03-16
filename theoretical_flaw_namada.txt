@@ -56,8 +56,8 @@ By implementing such controls and checks, the Namada project can ensure that the
 =================================
 
 Update to supplement my views, I have applied the above errors to account for the PGF Treasury fund that I emailed on 2024/03/12 my email : teik7512@gmail.com
+Please allow me to update related details:https://hackmd.io/@J5lHUw9SSr2MEv9dx_tQwQ/H1SfOjM0p
 with title : "Finding Security Vulnerabilities - A way to generate free tokens that takes advantage of theoretical flaws"
-
 After I shared this, in telegram group : Namada VietNam, player: tnam1qrhnj4cw0d6agek9v8yxs3p2arxynmc3ucn5ekua
 trying to steal my quest using Proposal-id 315. Any player submitting Task S with proof proposal-id 315 is a copy.
 Meanwhile I have done this at Proposal-id 260.
