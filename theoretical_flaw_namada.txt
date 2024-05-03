@@ -54,7 +54,64 @@ Independent auditing: Conduct independent audits and inspections of the use of p
 By implementing such controls and checks, the Namada project can ensure that the use of public funds is carried out transparently, responsibly, and effectively.
 
 =================================
+The theoretical flaws in the namada specification I mentioned in previous "Building protocol improvements" task. I hope these two tasks of mine can complement each other
+Here is its link: https://github.com/nolan7512/ProofofNamada/blob/main/theoretical_flaw_namada.txt
 
+
+I applied the theoretical flaws and holes in this logic to token appropriation in the PGF Treasury
+
+root@localhost:~# namadac query-proposal --proposal-id 260
+Last committed epoch: 29
+Proposal Id: 260
+Type: PGF funding
+Author: tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e
+Content: {"abstract": "NamadaLabs is running for a management position, focusing on technical research. The technical research I will focus on will certainly bring value to the community.", "authors": "NamadaLabs@heliax.dev", "created": "2024-02-28T00:00:01Z", "details": "PGF Proposal is to call for community funds to develop RPC, API, IBC Relayer, Exploror for free for everyone. We will use funding to maintain these free resources", "discussions-to": "forum.namada.net/t/proposing-a-namada-community-architecture-based-on-rpgf-funding/427", "license": "MIT", "motivation": "Nobody knows technical research better than NamadaLabs. Trust NamadaLabs. NamadaLabs have the best technical research. I will be the best manager. Namada asked we make public goods funding great again.", "requires": "", "title": "NamadaLabs - Make public goods funding great again, free for all"}
+Start Epoch: 22
+End Epoch: 24
+Grace Epoch: 26
+Status: ended
+Data: Actions:
+  Continuous: Add(Internal address=tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e, amount=200000000000000)
+  Retroactive: Internal address=tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e, amount=50000000000000
+
+I proposed a proposal for a huge amount of money, and it was easily passed, because most people only read the first part and CLI or UI queries do not display Continuous or Retroactive content and other flaws I have found. mentioned in the attached link. I wrote it pretending to be an improvement by the Namada and Helixa dev teams, but the content of Continuous,Retroactive called for a huge amount of tokens.
+
+Data: Actions:
+   Continuous: Add(Internal address=tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e, amount=200000000000000)
+   Retroactive: Internal address=tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e, amount=50000000000000 
+
+
+And here is the result: can be queried via : namadac query-pgf
+
+root@localhost:~# namadac query-pgf
+Pgf fundings:
+    - tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e for 200000000.000000
+
+IMPORTANCE : 
+**tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e is my address and it is also a Transparent Address address , not a multisign wallet
+- In Namada specs mentioned :
++ Becoming a steward
+  The first step towards becoming a Steward is to instantiate a multisignature account. (https://specs.namada.net/modules/governance/public-goods-funding/becoming-a-steward)
++ but in the code there is no check for multisig, even whether the manager is  1-out-of-1 multisig , it should be checked to be consistent with namada specs
+struct StewardProposal{
+  id: u64
+  content: Vec<u8>,
+  author: Address,
+  r#type: PGFSteward,
+  votingStartEpoch: Epoch,
+  votingEndEpoch: Epoch,
+  graceEpoch: Epoch,
+}
+
+
+
+
+
+
+
+
+
+tnam1qqnarl4h6dsy4jchy0tcxakh286ec03weyfnks6e is my address and it is also a Transparent Address address , not a multisign wallet
 Update to supplement my views, I have applied the above errors to account for the PGF Treasury fund that I emailed on 2024/03/12 my email : teik7512@gmail.com
 Please allow me to update related details:https://hackmd.io/@J5lHUw9SSr2MEv9dx_tQwQ/H1SfOjM0p
 with title : "Finding Security Vulnerabilities - A way to generate free tokens that takes advantage of theoretical flaws"
