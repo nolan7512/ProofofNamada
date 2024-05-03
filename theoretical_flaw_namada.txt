@@ -56,6 +56,7 @@ By implementing such controls and checks, the Namada project can ensure that the
 =================================
 The theoretical flaws in the namada specification I mentioned in previous "Building protocol improvements" task. I hope these two tasks of mine can complement each other
 Here is its link: https://github.com/nolan7512/ProofofNamada/blob/main/theoretical_flaw_namada.txt
+https://hackmd.io/@J5lHUw9SSr2MEv9dx_tQwQ/H1SfOjM0p
 
 
 I applied the theoretical flaws and holes in this logic to token appropriation in the PGF Treasury
